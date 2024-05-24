@@ -4,7 +4,7 @@ let alertSection=document.getElementById('alertSection')
 let siteName= /^([A-Z]|[a-z]|[0-9]){3,}$/
 let siteUrl= /^((https|http):\/\/([A-Z]|[a-z]|[0-9]){1,}(.com)?\/?)|(www.([A-Z]|[a-z]|[0-9]){1,}.com)$/
 let siteContainer=[]
-let flag=false
+var flag=false;
 if(localStorage.getItem('allSites')){
     siteContainer=JSON.parse(localStorage.getItem('allSites'))
     showSite();
@@ -19,6 +19,7 @@ function addSite(){
         siteContainer.push(site)
         showSite()
         clear()
+        refresh()
         localStorage.setItem('allSites',JSON.stringify(siteContainer))
     }else{
         alertSection.classList.remove('d-none')
@@ -56,6 +57,7 @@ function validSiteRegex(valid){
         valid.classList.replace('is-invalid', 'is-valid')
         flag=true;
         return true
+       
      }else{
          valid.classList.add('is-invalid')
          flag=false;
@@ -66,3 +68,6 @@ function closeAlert(){
     alertSection.classList.add('d-none')
 }
 
+function refresh(){
+    window.location.reload(true);
+}
