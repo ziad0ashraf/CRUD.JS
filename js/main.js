@@ -30,10 +30,10 @@ function showSite(){
     let cartona=""
     for(i=0;i<siteContainer.length;i++){
         cartona+=`
-        <div class="col-lg-3 col-md-6 col-sm-12 my-2 px-2">${i+1}</div>
-        <div class="col-lg-3 col-md-6 col-sm-12 my-2 px-2">${siteContainer[i].siteName}</div>
-        <div class="col-lg-3 col-md-6 col-sm-12 my-1 px-2"><a target="_blank" href="${siteContainer[i].siteUrl}"><button class="btn btn-outline-info "><i class="fa-solid fa-eye pe-2"></i>Visit</button></a></div>
-        <div class="col-lg-3 col-md-6 col-sm-12 my-1 px-2"><button onclick="deleteSite(${i})" class="btn btn-outline-danger"><i class="fa-solid fa-trash pe-2"></i>Delete</button></div>
+        <td>${i+1}</td>
+        <td>${siteContainer[i].siteName}</td>
+        <td><a target="_blank" href="${siteContainer[i].siteUrl}"><button class="btn btn-outline-info "><i class="fa-solid fa-eye pe-2"></i>Visit</button></a></td>
+        <td><button onclick="deleteSite(${i})" class="btn btn-outline-danger"><i class="fa-solid fa-trash pe-2"></i>Delete</button></td>
 
         `
     }
